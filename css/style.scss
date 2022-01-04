@@ -1,0 +1,621 @@
+/*
+    Author: Rakibul Hassan Rifat
+
+*/
+
+/*
+	==========Index=========
+	01)	Variable Section
+	02) Global CSS Section
+	03) Mixin Section
+	04) Top Section
+    05) Navbar Section
+	06) Banner Section
+    07) About Us Section
+    08) Our Approach Section
+    09) Our Work Section
+    10) Subscribe Section
+    11) Get In Touch Section
+    12) Footer Section
+    13) Media Query
+	========================
+*/
+
+/*===== 01) Variable Section =====*/
+$primary-color:#DC3545;
+$black:#111;
+$white:#fff;
+$top-bg:#F0F2F4;
+$top-border:#E2E2E2;
+$nav-li:#424242;
+$banner-btn:#ffc001;
+$banner-btn-hover:#F8CD53;
+$section-bg:#F3F3F3;
+$work-bg:#DE2B24;
+$project-bg:#F35E59;
+$subscribe-bg:#1287BF;
+$form-p:#a39f9f;
+$get-bg:#2A2A2A;
+$get-border:#515151;
+$nav-bg:#CDE1E9;
+$box-shadow: 0px 10px 30px rgba(57,56,61,0.205);
+
+/*===== 02) Global CSS Section =====*/
+body{
+    font-family: 'Dosis', sans-serif;
+}
+.about-us,
+.our-approach,
+.our-work,
+.subscribe,
+.get-in-toch{
+    padding:90px 0;
+}
+.nav_fixed{
+	position: fixed;
+	width: 100%;
+	top: -1px;
+	left: 0;
+	right: 0;
+	background: $nav-bg;
+	box-shadow: $box-shadow;
+	z-index: 999;
+	transition: all 0.5s ease;
+	padding: 0 1rem;
+}
+
+/*===== 03) Mixin Section =====*/
+@mixin btn{
+    button{
+        background-color:$banner-btn;
+        color:$white;
+        font-size: 20px;
+        padding: 10px 35px;
+        border: none;
+        transition: 0.5s ;
+        border-radius: 5px;
+    }
+    button:focus, button:hover{
+        outline: none;
+        box-shadow: none;
+    }
+    button:hover{
+        background-color: $banner-btn-hover;
+        transform: scale(1.1);        
+    }
+}
+@mixin head{
+    .heading{
+        text-align: center;
+        padding-bottom: 50px;
+        span{
+            width: 45px;
+            height:5px;
+            display: block;
+            background-color: $nav-li;
+            margin:0 auto;
+        }
+    }
+}
+@mixin left-card{
+    .card{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 35%;
+        width: 20%;
+        text-align: center;
+        background-color: $primary-color;
+        color:$white;
+        border:3px solid $white;
+        transform: translateX(10%);
+
+        h2{
+            margin:3px 0;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+}
+@mixin right-card{
+    .card{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        height: 35%;
+        width: 20%;
+        text-align: center;
+        background-color: $primary-color;
+        color:$white;
+        border:3px solid $white;
+        transform: translateX(-10%);
+
+        h2{
+            margin:3px 0;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+}
+/*===== 04) Top Section =====*/
+.top{
+    background-color:$top-bg;
+    border-bottom: 2px solid $top-border;
+    .container{
+        padding:20px 5px;
+        .main{
+            float: right; 
+            .content{
+                font-size: 16px;
+                font-style: normal;
+                margin:0 10px;
+                float:left;
+            }
+            .content:nth-child(2){
+                border-left: 2px solid $top-border;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+/*===== 05) Navbar Section =====*/
+#header{
+    .navbar{
+        .container{
+            a{
+                img{
+                    width: 65%;
+                }
+            }
+            #nav{
+                ul{
+                    position: relative;
+                    li{
+                        padding:0 5px;
+                        a{
+                            font-weight: 600;
+                            font-size: 16px;;
+                            padding-left:20px;
+                            color: $black;
+                        }
+                        a:hover{
+                            color:$primary-color;
+                        }
+                        a.active{
+                            color:$primary-color;
+                        }      
+                        .text-light:hover{
+                            color:$black !important;
+                        }
+                    }
+                    .dot::after{
+                        content: '';
+                        position: absolute;
+                        width: 7px;
+                        height: 7px;
+                        background-color:$nav-li ;
+                        display: block;
+                        //left:0;
+                        top:50%;
+                        border-radius: 50px;
+                        transform: translateY(-50%);
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+/*===== 06) Banner Section =====*/
+.banner{
+    background-image: url('../img/banner-bg.jpg');
+    background-size:cover;
+    min-height: 580px;
+    .content{
+        transform: translateY(125%);
+        line-height: 35px; 
+        @include btn;
+    }
+}
+
+/*===== 07) About Us Section =====*/
+.about-us{
+    @include head;
+    .main{
+        text-align: center;
+        h3{
+            margin-top: 15px;
+        }
+    }
+}
+
+/*===== 08) Our Approach Section =====*/
+.our-approach{
+    background-color: $section-bg;
+
+    @include head;
+
+    .main{
+        
+        .row{
+            overflow: hidden;
+            margin: 20px 0;
+            background-color: $white;
+
+            .col-md-8{
+                align-self: center;
+                padding: 0 65px;
+            }
+
+            .left{
+                position:relative;
+                padding:0;
+                img{
+                    float:left;
+                }
+                @include left-card;
+            }
+            .right{
+                position: relative;
+                padding:0;
+                img{
+                    float:right;
+                }
+                @include right-card;
+            }
+        }
+    }
+}
+
+/*===== 09) Our Work Section =====*/
+.our-work{
+    background-color: $work-bg;
+    @include head;
+
+    .main{
+        .row{
+            background-color: $project-bg;
+            .img-section{
+                padding: 0;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .txt-section{
+                align-self: center;
+                text-align: center;
+                color: $white;
+                line-height: 20px;
+    
+                svg{
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
+/*===== 10) Subscribe Section =====*/
+.subscribe{
+    background-color: $subscribe-bg;
+    color:$white;
+
+    .heading{
+        text-align: center;
+
+        span{
+            font-size: 40px;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    }
+
+    .form-section{
+        width: 65%;
+        background: $white;
+        border-radius: 5px;
+        margin: 40px auto;
+
+        .content-body{
+        position: relative;
+
+            #form{
+                position: relative;
+    
+                p{
+                    padding: 45px 35px 30px;
+                    color: $form-p;
+                    width: 85%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+    
+                .form-content{
+                    padding: 0 30px;
+                    width: 85%;
+                    margin: 0 auto;
+    
+                    .form{
+    
+                        input{
+                            margin:10px 0;
+                            padding:5px;
+                            font-size: 20px;
+                        }
+                        input[type="submit"]{
+                            border: none;
+                            font-size: 15px;
+                            color: $white;
+                            padding: 10px 20px;
+                            width: 25%;
+                            margin: 50px auto;
+                        }
+                    }
+                }
+    
+                button{
+                   position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: $primary-color;
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    font-size: 25px;
+                    transform: translate(35% , -35%);
+                    color:$white;
+                    padding: 0;
+                    border: 2px solid $white;
+                }
+                button:focus{
+                    box-shadow: none;
+                }
+            } 
+        }
+        .content-body::after{
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-right: 40px solid #ff000000;
+            border-left: 40px solid #ff000000;
+            border-bottom: 50px solid white;
+    
+        }
+
+           
+    }
+    
+}
+
+/*===== 11) Get In Touch =====*/
+.get-in-toch{
+    background-color: $get-bg;
+    
+
+    .first{
+        color:$white;
+        text-align: center;
+        line-height: 30px;
+        .social{
+            span{
+                padding: 10px;
+                border: 2px solid #515151;
+                margin: 15px 10px;
+                display: inline-block;
+                font-size: 16px;
+                width: 15%;
+                cursor: pointer;
+            }
+            span:hover{
+                border:2px solid $primary-color;
+            }
+        }
+    }
+    .second{
+        width:60%;
+        margin: 20px 0;
+
+        input[type="email"]{
+            display: block;
+            padding: 12px 0;
+            border:none;
+            width: 100%;
+            margin: 30px 0;
+            text-indent: 10px;
+            background-color: $get-border;
+            color:$white;
+        }
+        input[type="email"]:hover,
+        input[type="email"]:active,
+        input[type="email"]:focus{
+            outline: none;
+            box-shadow: none;
+        }
+        button{
+            margin: 0 auto;
+            display: block;
+            padding: 10px 30px;
+            background-color: $get-bg;
+            border: 2px solid $get-border;
+            outline: none;
+            box-shadow: none;
+            border-radius: 5px;
+            color: $white;
+        }
+    }
+}
+
+/*===== 2) Footer Section =====*/
+.footer{
+    background-color: $get-border;
+    padding:30px 0;
+
+    p{
+        text-align: center;
+        color: $white;
+    }
+}
+
+/*===== 13) Media Query =====*/
+@media screen and (max-width:992px){
+    .our-approach{
+        .main{
+            .row{
+                .left{
+                    .card{
+                        position: absolute;
+                        height: 40%;
+                        width: 25%;
+                        transform: translateX(45%);
+                    }
+                }
+                .right{
+                    .card{
+                        height: 40%;
+                        width: 25%;
+                        transform: translateX(-45%);
+                    }
+                }
+            }
+        }
+    }
+    .subscribe{
+        .form-section{
+            .content-body{
+                #form{
+                    .form-content{
+                        .form{
+                            input[type="submit"]{
+                                width: 40% !important;
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+    }
+}
+@media screen and (max-width:768px){
+    #header{
+        .navbar{
+            .container{
+                #nav{
+                    ul{
+                        .dot::after{
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .about-us{
+        .main{
+            .col-md-4{
+                margin:20px 0;
+            }
+        }
+    }
+    .our-approach{
+        .main{
+            .row{
+                .left,
+                .right{
+                    img{
+                        width:100%;
+                    }
+                }
+                .left{
+                    .card{
+                        top:unset;
+                        transform:translateY(55%);
+                        left:0;
+                        height:25%;
+                        width:20%;   
+                    }
+                }
+                .right{
+                    .card{
+                        bottom:unset;
+                        transform:translateY(-50%);
+                        right:0;
+                        height:25%;
+                        width:20%;   
+                    }
+                }
+
+                .col-md-8{
+                    padding:55px 65px 35px;
+                }
+            }
+        }
+    }
+    .our-work{
+        .main{
+            .row{
+                margin:10px 0;
+                .txt-section{
+                    padding:20px 0;
+                }
+            }
+        }
+    }
+    .subscribe{
+        .form-section{
+            width:90%;
+        }
+    }
+    .get-in-toch{
+        .second{
+            width: 85%;
+        }
+    }
+}
+@media screen and (max-width:576px){
+    
+}
+@media screen and (max-width:400px){
+    .our-approach{
+        .main{
+            .row{
+                .left,
+                .right{
+                    .card{
+                        height: 30%;
+                    }
+                }
+            }
+        }
+    }
+    .subscribe{
+        .form-section{
+            .content-body{
+                #form{
+                    .form-content{
+                        .form{
+                            input[type="submit"]{
+                                width: 80% !important;
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+    }
+}

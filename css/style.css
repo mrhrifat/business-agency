@@ -1,0 +1,564 @@
+/*
+    Author: Rakibul Hassan Rifat
+
+*/
+/*
+	==========Index=========
+	01)	Variable Section
+	02) Global CSS Section
+	03) Mixin Section
+	04) Top Section
+    05) Navbar Section
+	06) Banner Section
+    07) About Us Section
+    08) Our Approach Section
+    09) Our Work Section
+    10) Subscribe Section
+    11) Get In Touch Section
+    12) Footer Section
+    13) Media Query
+	========================
+*/
+/*===== 01) Variable Section =====*/
+/*===== 02) Global CSS Section =====*/
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+.about-us,
+.our-approach,
+.our-work,
+.subscribe,
+.get-in-toch {
+  padding: 90px 0;
+}
+
+.nav_fixed {
+  position: fixed;
+  width: 100%;
+  top: -1px;
+  left: 0;
+  right: 0;
+  background: #CDE1E9;
+  -webkit-box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+          box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+  z-index: 999;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding: 0 1rem;
+}
+
+/*===== 03) Mixin Section =====*/
+/*===== 04) Top Section =====*/
+.top {
+  background-color: #F0F2F4;
+  border-bottom: 2px solid #E2E2E2;
+}
+
+.top .container {
+  padding: 20px 5px;
+}
+
+.top .container .main {
+  float: right;
+}
+
+.top .container .main .content {
+  font-size: 16px;
+  font-style: normal;
+  margin: 0 10px;
+  float: left;
+}
+
+.top .container .main .content:nth-child(2) {
+  border-left: 2px solid #E2E2E2;
+  padding-left: 10px;
+}
+
+/*===== 05) Navbar Section =====*/
+#header .navbar .container a img {
+  width: 65%;
+}
+
+#header .navbar .container #nav ul {
+  position: relative;
+}
+
+#header .navbar .container #nav ul li {
+  padding: 0 5px;
+}
+
+#header .navbar .container #nav ul li a {
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 20px;
+  color: #111;
+}
+
+#header .navbar .container #nav ul li a:hover {
+  color: #DC3545;
+}
+
+#header .navbar .container #nav ul li a.active {
+  color: #DC3545;
+}
+
+#header .navbar .container #nav ul li .text-light:hover {
+  color: #111 !important;
+}
+
+#header .navbar .container #nav ul .dot::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #424242;
+  display: block;
+  top: 50%;
+  border-radius: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/*===== 06) Banner Section =====*/
+.banner {
+  background-image: url("../img/banner-bg.jpg");
+  background-size: cover;
+  min-height: 580px;
+}
+
+.banner .content {
+  -webkit-transform: translateY(125%);
+          transform: translateY(125%);
+  line-height: 35px;
+}
+
+.banner .content button {
+  background-color: #ffc001;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 35px;
+  border: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.banner .content button:focus, .banner .content button:hover {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.banner .content button:hover {
+  background-color: #F8CD53;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/*===== 07) About Us Section =====*/
+.about-us .heading {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.about-us .heading span {
+  width: 45px;
+  height: 5px;
+  display: block;
+  background-color: #424242;
+  margin: 0 auto;
+}
+
+.about-us .main {
+  text-align: center;
+}
+
+.about-us .main h3 {
+  margin-top: 15px;
+}
+
+/*===== 08) Our Approach Section =====*/
+.our-approach {
+  background-color: #F3F3F3;
+}
+
+.our-approach .heading {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.our-approach .heading span {
+  width: 45px;
+  height: 5px;
+  display: block;
+  background-color: #424242;
+  margin: 0 auto;
+}
+
+.our-approach .main .row {
+  overflow: hidden;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+.our-approach .main .row .col-md-8 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0 65px;
+}
+
+.our-approach .main .row .left {
+  position: relative;
+  padding: 0;
+}
+
+.our-approach .main .row .left img {
+  float: left;
+}
+
+.our-approach .main .row .left .card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 35%;
+  width: 20%;
+  text-align: center;
+  background-color: #DC3545;
+  color: #fff;
+  border: 3px solid #fff;
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
+}
+
+.our-approach .main .row .left .card h2 {
+  margin: 3px 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.our-approach .main .row .right {
+  position: relative;
+  padding: 0;
+}
+
+.our-approach .main .row .right img {
+  float: right;
+}
+
+.our-approach .main .row .right .card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 35%;
+  width: 20%;
+  text-align: center;
+  background-color: #DC3545;
+  color: #fff;
+  border: 3px solid #fff;
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
+}
+
+.our-approach .main .row .right .card h2 {
+  margin: 3px 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/*===== 09) Our Work Section =====*/
+.our-work {
+  background-color: #DE2B24;
+}
+
+.our-work .heading {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.our-work .heading span {
+  width: 45px;
+  height: 5px;
+  display: block;
+  background-color: #424242;
+  margin: 0 auto;
+}
+
+.our-work .main .row {
+  background-color: #F35E59;
+}
+
+.our-work .main .row .img-section {
+  padding: 0;
+}
+
+.our-work .main .row .img-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.our-work .main .row .txt-section {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
+}
+
+.our-work .main .row .txt-section svg {
+  font-size: 35px;
+}
+
+/*===== 10) Subscribe Section =====*/
+.subscribe {
+  background-color: #1287BF;
+  color: #fff;
+}
+
+.subscribe .heading {
+  text-align: center;
+}
+
+.subscribe .heading span {
+  font-size: 40px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.subscribe .form-section {
+  width: 65%;
+  background: #fff;
+  border-radius: 5px;
+  margin: 40px auto;
+}
+
+.subscribe .form-section .content-body {
+  position: relative;
+}
+
+.subscribe .form-section .content-body #form {
+  position: relative;
+}
+
+.subscribe .form-section .content-body #form p {
+  padding: 45px 35px 30px;
+  color: #a39f9f;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.subscribe .form-section .content-body #form .form-content {
+  padding: 0 30px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.subscribe .form-section .content-body #form .form-content .form input {
+  margin: 10px 0;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.subscribe .form-section .content-body #form .form-content .form input[type="submit"] {
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  padding: 10px 20px;
+  width: 25%;
+  margin: 50px auto;
+}
+
+.subscribe .form-section .content-body #form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #DC3545;
+  display: block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 25px;
+  -webkit-transform: translate(35%, -35%);
+          transform: translate(35%, -35%);
+  color: #fff;
+  padding: 0;
+  border: 2px solid #fff;
+}
+
+.subscribe .form-section .content-body #form button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.subscribe .form-section .content-body::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-right: 40px solid #ff000000;
+  border-left: 40px solid #ff000000;
+  border-bottom: 50px solid white;
+}
+
+/*===== 11) Get In Touch =====*/
+.get-in-toch {
+  background-color: #2A2A2A;
+}
+
+.get-in-toch .first {
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+.get-in-toch .first .social span {
+  padding: 10px;
+  border: 2px solid #515151;
+  margin: 15px 10px;
+  display: inline-block;
+  font-size: 16px;
+  width: 15%;
+  cursor: pointer;
+}
+
+.get-in-toch .first .social span:hover {
+  border: 2px solid #DC3545;
+}
+
+.get-in-toch .second {
+  width: 60%;
+  margin: 20px 0;
+}
+
+.get-in-toch .second input[type="email"] {
+  display: block;
+  padding: 12px 0;
+  border: none;
+  width: 100%;
+  margin: 30px 0;
+  text-indent: 10px;
+  background-color: #515151;
+  color: #fff;
+}
+
+.get-in-toch .second input[type="email"]:hover,
+.get-in-toch .second input[type="email"]:active,
+.get-in-toch .second input[type="email"]:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.get-in-toch .second button {
+  margin: 0 auto;
+  display: block;
+  padding: 10px 30px;
+  background-color: #2A2A2A;
+  border: 2px solid #515151;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/*===== 2) Footer Section =====*/
+.footer {
+  background-color: #515151;
+  padding: 30px 0;
+}
+
+.footer p {
+  text-align: center;
+  color: #fff;
+}
+
+/*===== 13) Media Query =====*/
+@media screen and (max-width: 992px) {
+  .our-approach .main .row .left .card {
+    position: absolute;
+    height: 40%;
+    width: 25%;
+    -webkit-transform: translateX(45%);
+            transform: translateX(45%);
+  }
+  .our-approach .main .row .right .card {
+    height: 40%;
+    width: 25%;
+    -webkit-transform: translateX(-45%);
+            transform: translateX(-45%);
+  }
+  .subscribe .form-section .content-body #form .form-content .form input[type="submit"] {
+    width: 40% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header .navbar .container #nav ul .dot::after {
+    content: none;
+  }
+  .about-us .main .col-md-4 {
+    margin: 20px 0;
+  }
+  .our-approach .main .row .left img,
+  .our-approach .main .row .right img {
+    width: 100%;
+  }
+  .our-approach .main .row .left .card {
+    top: unset;
+    -webkit-transform: translateY(55%);
+            transform: translateY(55%);
+    left: 0;
+    height: 25%;
+    width: 20%;
+  }
+  .our-approach .main .row .right .card {
+    bottom: unset;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 0;
+    height: 25%;
+    width: 20%;
+  }
+  .our-approach .main .row .col-md-8 {
+    padding: 55px 65px 35px;
+  }
+  .our-work .main .row {
+    margin: 10px 0;
+  }
+  .our-work .main .row .txt-section {
+    padding: 20px 0;
+  }
+  .subscribe .form-section {
+    width: 90%;
+  }
+  .get-in-toch .second {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .our-approach .main .row .left .card,
+  .our-approach .main .row .right .card {
+    height: 30%;
+  }
+  .subscribe .form-section .content-body #form .form-content .form input[type="submit"] {
+    width: 80% !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
